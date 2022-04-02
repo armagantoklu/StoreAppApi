@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Stack = createNativeStackNavigator();
 import { useDispatch } from 'react-redux';
 function App() {
-  const dispatch = useDispatch();
+  const dispatchr = useDispatch();
   const userSessionData = useSelector(data => data.user);
   const userSessionLoading = useSelector(data => data.aLoading);
 
@@ -39,7 +39,7 @@ function App() {
                   headerStyle: { backgroundColor: '#61A4BC' },
                   headerTitleStyle: { color: 'white' },
                   headerRight: () => (
-                    <Icon name='sign-out' size={20} color='white' onPress={() => { dispatch({ type: 'SET_USER', payload: { user: null } }) }} />
+                    <Icon name='sign-out' size={20} color='white' onPress={() => { dispatchr({ type: 'SET_USER', payload: { user: null } }) }} />
                   )
                 }} />
               <Stack.Screen name='details' component={Details} options=
